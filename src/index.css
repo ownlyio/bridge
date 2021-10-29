@@ -218,6 +218,15 @@ html {
   background-color:#f19150;
   color:#ffffff;
 }
+.btn-border-2 {
+  border: 3px solid #16b99a;
+  color:#16b99a;
+  font-weight:bold;
+}
+.btn-border-2:hover, .btn-border-2:active, .btn-border-2:focus {
+  background-color:#16b99a;
+  color:#ffffff;
+}
 .bg-color-1 {
   background-color:#f3f3f3!important;
 }
@@ -359,6 +368,15 @@ input[type=number] {
   left:0;
   z-index:10;
   transition:0.3s;
+}
+#navbar-d-flex {
+  min-height:63px;
+}
+#navbarSupportedContent {
+  flex-grow:initial!important;
+}
+#connect-to-metamask {
+  border-radius:100px;
 }
 
 /*##################################################################*/
