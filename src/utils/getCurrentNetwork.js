@@ -4,9 +4,9 @@ const getCurrentNetwork = async (onChange = 0) => {
     if (window.ethereum) {
         try {
             let network = ""
-            const networkID = await web3.eth.net.getId()
+            const chainID = await web3.eth.net.getId()
 
-            switch (networkID) {
+            switch (chainID) {
                 case 1:
                     network = "main"
                     break
@@ -33,7 +33,7 @@ const getCurrentNetwork = async (onChange = 0) => {
             }
 
             return {
-                networkID,
+                chainID,
                 network,
                 netStatus: (onChange === 0) ? 1 : 3
             }

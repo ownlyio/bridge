@@ -14,10 +14,13 @@ import img_ownly_logo from './img/ownly/logo.png';
 import img_ownly_horizontal_white from './img/ownly/horizontal-white.png';
 
 function App() {
-    const [walletAddress, setWallet] = useState("")
+    const [wallet, setWallet] = useState({
+        address: "",
+        chainID: ""
+    });
     const [status, setStatus] = useState(0)
-    const [network, setNetwork] = useState("")
-    const [netStatus, setNetStatus] = useState(0)
+    // const [network, setNetwork] = useState("")
+    // const [netStatus, setNetStatus] = useState(0)
 
     const [showMetamaskInstall, setShowMetamaskInstall] = useState(false);
     const handleShowMetamaskInstall = () => setShowMetamaskInstall(true);
@@ -44,8 +47,8 @@ function App() {
         if (window.ethereum) {
             window.ethereum.on('chainChanged', async function(networkIdMM){
                 const networkResponseOnLoad = await getCurrentNetwork(1)
-                setNetwork(networkResponseOnLoad.network)
-                setNetStatus(networkResponseOnLoad.netStatus)
+                // setNetwork(networkResponseOnLoad.network)
+                // setNetStatus(networkResponseOnLoad.netStatus)
             });
         }
     }
@@ -53,11 +56,21 @@ function App() {
     const connectWallet = () => {
         async function initUtilsOnLoad() {
             const {address, status} = await getCurrentWalletConnected();
-            const {network, netStatus} = await getCurrentNetwork();
-            setWallet(address)
-            setStatus(status)
-            setNetwork(network)
-            setNetStatus(netStatus)
+            const {chainID, network, netStatus} = await getCurrentNetwork();
+
+            console.log(address);
+            console.log(chainID);
+
+            if(wallet.address !== address && wallet.chainID !== chainID) {
+                setWallet({
+                    address: address,
+                    chainID: network
+                });
+            }
+
+            // setStatus(status)
+            // setNetwork(network)
+            // setNetStatus(netStatus)
 
             if (status === 0) {
                 handleShowMetamaskInstall()
@@ -74,16 +87,16 @@ function App() {
     });
 
     const renderWalletAddress = () => {
-        if(walletAddress !== "") {
+        if(wallet.address !== "") {
             return (
                 <li className="nav-item">
-                    <a className="text-color-6 text-decoration-none" href="#" id="account-address">{ shortenAddress(walletAddress, 6, 4) }</a>
+                    <a className="text-color-6 text-decoration-none" href="#" id="account-address">{ shortenAddress(wallet.address, 6, 4) }</a>
                 </li>
             );
         } else {
             return (
                 <li className="nav-item" id="connect-to-metamask-container">
-                    <button type="button" className="btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" onClick={connectWallet}>Connect Wallet</button>
+                    <button type="button" className="btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" onClick={ connectWallet }>Connect Wallet</button>
                 </li>
             );
         }
