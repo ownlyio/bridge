@@ -1,107 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react'
 
 // Utils
-import contract from './utils/contract'
-import getCurrentNetwork from './utils/getCurrentNetwork'
-import getCurrentWalletConnected  from './utils/getCurrentWalletConnected'
 import shortenAddress  from './utils/shortenAddress'
 
-import img_bnb from './img/tokens/bnb.png';
-import img_eth from './img/tokens/eth.png';
-import img_ownly_logo from './img/ownly/logo.png';
-import img_ownly_horizontal_white from './img/ownly/horizontal-white.png';
+import img_bnb from './img/tokens/bnb.png'
+import img_eth from './img/tokens/eth.png'
+import img_ownly_logo from './img/ownly/logo.png'
 
 function App() {
-    const [wallet, setWallet] = useState({
-        address: "",
-        chainID: ""
-    });
-    const [status, setStatus] = useState(0)
-    // const [network, setNetwork] = useState("")
-    // const [netStatus, setNetStatus] = useState(0)
-
-    const [showMetamaskInstall, setShowMetamaskInstall] = useState(false);
-    const handleShowMetamaskInstall = () => setShowMetamaskInstall(true);
-
-    // Event Listener for Metamask Account Change
-    const addWalletListener = () => {
-        if (window.ethereum) {
-            window.ethereum.on("accountsChanged", (accounts) => {
-                if (accounts.length > 0) {
-                    setWallet(accounts[0])
-                    setStatus(1)
-                } else {
-                    setWallet("");
-                    setStatus(2)
-                }
-            })
-        } else {
-            setStatus(0);
-        }
-    }
-
-    // Event Listener for Metamask Network Change
-    const addNetworkListener = () => {
-        if (window.ethereum) {
-            window.ethereum.on('chainChanged', async function(networkIdMM){
-                const networkResponseOnLoad = await getCurrentNetwork(1)
-                // setNetwork(networkResponseOnLoad.network)
-                // setNetStatus(networkResponseOnLoad.netStatus)
-            });
-        }
-    }
-
-    const connectWallet = () => {
-        async function initUtilsOnLoad() {
-            const {address, status} = await getCurrentWalletConnected();
-            const {chainID, network, netStatus} = await getCurrentNetwork();
-
-            console.log(address);
-            console.log(chainID);
-
-            if(wallet.address !== address && wallet.chainID !== chainID) {
-                setWallet({
-                    address: address,
-                    chainID: network
-                });
-            }
-
-            // setStatus(status)
-            // setNetwork(network)
-            // setNetStatus(netStatus)
-
-            if (status === 0) {
-                handleShowMetamaskInstall()
-            }
-        }
-
-        initUtilsOnLoad();
-        addWalletListener();
-        addNetworkListener();
-    }
-
-    useEffect(() => {
-        connectWallet();
-    });
-
-    const renderWalletAddress = () => {
-        if(wallet.address !== "") {
-            return (
-                <li className="nav-item">
-                    <a className="text-color-6 text-decoration-none" href="#" id="account-address">{ shortenAddress(wallet.address, 6, 4) }</a>
-                </li>
-            );
-        } else {
-            return (
-                <li className="nav-item" id="connect-to-metamask-container">
-                    <button type="button" className="btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" onClick={ connectWallet }>Connect Wallet</button>
-                </li>
-            );
-        }
-    };
-
     return (
         <div className="bg-color-1">
             <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
@@ -127,7 +34,9 @@ function App() {
 
                     <div className="collapse navbar-collapse w-100 justify-content-end" id="navbarSupportedContent">
                         <ul className="navbar-nav mb-2 mb-lg-0">
-                            { renderWalletAddress() }
+                            <li className="nav-item" id="connect-to-metamask-container">
+                                <button type="button" className="btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" onClick={ connectWallet }>Connect Wallet</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
