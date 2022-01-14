@@ -221,7 +221,11 @@ function App() {
                                         <button className="btn btn-border-2 py-2 w-100">Limits</button>
                                     </div>
                                     <div className="mb-1">
-                                        <button className="btn btn-custom-2 font-size-130 py-3 w-100">APPROVE</button>
+                                        { state.isConnected ? (
+                                            <button className="btn btn-custom-2 font-size-130 py-3 w-100">APPROVE</button>
+                                        ) : (
+                                            <button onClick={() => setShowNotConnected(true)} className="btn btn-custom-2 font-size-130 py-3 w-100">APPROVE</button>
+                                        )}
                                         {/* <button className="btn btn-custom-2 font-size-130 py-3 w-100">TRANSFER</button> */}
                                     </div>
                                 </div>
