@@ -1,79 +1,106 @@
 import './App.css';
 import { useEffect, useState } from 'react'
+import { configureWeb3 } from './utils/web3Init'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button, Modal } from 'react-bootstrap'
 import { faCheckCircle, faExclamationCircle, faExternalLinkAlt, faSpinner } from '@fortawesome/free-solid-svg-icons'
-// Utils
-import shortenAddress  from './utils/shortenAddress'
 // Images
 import img_bnb from './img/tokens/bnb.png'
 import img_eth from './img/tokens/eth.png'
 import img_ownly_logo from './img/ownly/logo.png'
 import metamask from './img/metamask.png'
 
+function App() {
+    const [web3, setWeb3] = useState()
+    const [bscContract, setBscContract] = useState()
+    const [ethContract, setEthContract] = useState()
+    const [state, setState] = useState({
+        isConnected: false,
+        account: "",
+        isApproved: false,
+        txError: "",
+        txHashBsc: "",
+        txHashEth: "",
+    })
 
-// Variables
-const [state, setState] = useState({
-    isConnected: false,
-    account: "",
-    isApproved: false,
-    txError: "",
-    txHashBsc: "",
-    txHashEth: "",
-})
+    // Other Variables
+    // PRODUCTION
+    // const explorerBscUrl = "https://bscscan.com/tx/"
+    // const explorerEthUrl = "https://etherscan.com/tx/"
+    // DEVELOPMENT
+    const explorerBscUrl = "https://testnet.bscscan.com/tx/"
+    const explorerEthUrl = "https://rinkeby.etherscan.com/tx/"
 
-// Other Variables
-// PRODUCTION
-// const explorerBscUrl = "https://bscscan.com/tx/"
-// const explorerEthUrl = "https://etherscan.com/tx/"
-// DEVELOPMENT
-const explorerBscUrl = "https://testnet.bscscan.com/tx/"
-const explorerEthUrl = "https://rinkeby.etherscan.com/tx/"
+    // Modals
+    const [showNotConnected, setShowNotConnected] = useState(false)
+    const [showPleaseWait, setShowPleaseWait] = useState(false)
+    const [showOnApprove, setShowOnApprove] = useState(false)
+    const [showOnError, setShowOnError] = useState(false)
+    const [showOnTransfer, setShowOnTransfer] = useState(false)
+    const [showMetamaskInstall, setShowMetamaskInstall] = useState(false)
+    const [showWrongNetwork, setShowWrongNetwork] = useState(false)
 
-// Modals
-const [showNotConnected, setShowNotConnected] = useState(false)
-const [showPleaseWait, setShowPleaseWait] = useState(false)
-const [showOnApprove, setShowOnApprove] = useState(false)
-const [showOnError, setShowOnError] = useState(false)
-const [showOnTransfer, setShowOnTransfer] = useState(false)
-const [showMetamaskInstall, setShowMetamaskInstall] = useState(false)
-
-// Util Functions
-// MAX function
-const triggerMaxAmount = () => {
-    // document.getElementById("stake-input-num").value = state.currentLPBalance
-}
-
-// make an address short
-const shortenAddress = (address, prefixCount, postfixCount) => {
-    let prefix = address.substr(0, prefixCount)
-    let postfix = address.substr(address.length - postfixCount, address.length)
-
-    return prefix + "..." + postfix
-}
-
-// state updater
-const _setState = (name, value) => {
-    setState(prevState => ({...prevState, [name]: value}))
-}
-
-// round to the nearest hundredths
-const roundOff = num => {
-    return +(Math.round(num + "e+2")  + "e-2");
-}
-
-// add thousands separator
-const addCommasToNumber = x => {
-    if (!Number.isInteger(Number(x))) {
-        x = Number(x).toFixed(5)
+    // Util Functions
+    // MAX function
+    const triggerMaxAmount = () => {
+        // document.getElementById("stake-input-num").value = state.currentLPBalance
     }
 
-    return x.toString().replace(/^[+-]?\d+/, function(int) {
-        return int.replace(/(\d)(?=(\d{3})+$)/g, '$1,');
-    });
-}
+    // make an address short
+    const shortenAddress = (address, prefixCount, postfixCount) => {
+        let prefix = address.substr(0, prefixCount)
+        let postfix = address.substr(address.length - postfixCount, address.length)
 
-function App() {
+        return prefix + "..." + postfix
+    }
+
+    // state updater
+    const _setState = (name, value) => {
+        setState(prevState => ({...prevState, [name]: value}))
+    }
+
+    // round to the nearest hundredths
+    const roundOff = num => {
+        return +(Math.round(num + "e+2")  + "e-2");
+    }
+
+    // add thousands separator
+    const addCommasToNumber = x => {
+        if (!Number.isInteger(Number(x))) {
+            x = Number(x).toFixed(5)
+        }
+
+        return x.toString().replace(/^[+-]?\d+/, function(int) {
+            return int.replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+        });
+    }
+
+    // web3 functions
+    // connect wallet
+    const connectWallet = async () => {
+        const web3Metamask = configureWeb3()
+
+        if (web3Metamask != 1) {
+            setWeb3(web3Metamask)
+            const netId = await web3Metamask.eth.net.getId() // 97 - BSC testnet, 56 - BSC Mainnet
+            
+            // PRODUCTION
+            // if (netId === 56) {
+            // DEVELOPMENT
+            if (netId === 97) {
+                const acct = await window.ethereum.request({ method: "eth_requestAccounts"})
+                if (acct.length > 0) {
+                    _setState("isConnected", true)
+                    _setState("account", acct[0])
+                }
+            } else {
+                setShowWrongNetwork(true)
+            }
+        } else {
+            setShowMetamaskInstall(true)
+        }
+    }
+
     return (
         <div className="bg-color-1">
             {/* Navbar */}
@@ -100,16 +127,16 @@ function App() {
 
                     <div className="justify-content-between mt-2 mt-lg-0" id="navbarSupportedContent" style={{"flexGrow": "initial"}}>
                         <ul className="navbar-nav mb-2 mb-lg-0">
-                            {/* { isConnected ? (
+                            { state.isConnected ? (
                                 <li className="nav-item" id="connect-to-metamask-container">
-                                    <button type="button" className="d-none d-sm-block btn btn-custom-9 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" style={{"borderRadius": "100px"}}>Connected: {shortenAddress(account, 6, 6)}</button>
+                                    <button type="button" className="d-none d-sm-block btn btn-custom-9 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" style={{"borderRadius": "100px"}}>Connected: {shortenAddress(state.account, 6, 4)}</button>
                                 </li>
-                            ) : ( */}
+                            ) : (
                                 <li className="nav-item" id="connect-to-metamask-container">
-                                    <button type="button" className="d-none d-sm-block btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" style={{"borderRadius": "100px"}}>Connect&nbsp;Wallet</button>
-                                    <button type="button" className="d-block d-sm-none btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" style={{"borderRadius": "100px"}}>Connect</button>
+                                    <button onClick={connectWallet} type="button" className="d-none d-sm-block btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" style={{"borderRadius": "100px"}}>Connect&nbsp;Wallet</button>
+                                    <button onClick={connectWallet} type="button" className="d-block d-sm-none btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" style={{"borderRadius": "100px"}}>Connect</button>
                                 </li>
-                            {/* )} */}
+                            )}
                         </ul>
                     </div>
                 </div>
@@ -293,6 +320,33 @@ function App() {
                     </Button>
                 </Modal.Footer>
             </Modal> 
+
+            {/* Modal for incorrect network */}
+            <Modal show={showWrongNetwork} onHide={() => setShowWrongNetwork(false)} backdrop="static" keyboard={false} size="sm" centered>
+                <Modal.Body>
+                    <div className="text-center mb-3">
+                        <FontAwesomeIcon color="green" size="6x" icon={faExclamationCircle} />
+                    </div>
+                    {/* PRODUCTION */}
+                    {/* <p className="app-network-modal-content text-center font-andes text-lg">Please connect to BSC Mainnet</p> */}
+                    {/* DEVELOPMENT */}
+                    <p className="app-network-modal-content text-center font-andes text-lg">Please connect to BSC Testnet</p>
+                </Modal.Body>
+                <Modal.Footer className="justify-content-center">
+                    <Button className="font-w-hermann w-hermann-reg" variant="secondary" onClick={() => setShowWrongNetwork(false)}>
+                        Close
+                    </Button>
+                    {/* PRODUCTION */}
+                    {/* <Button className="font-w-hermann w-hermann-reg" variant="primary" onClick={() => switchNetwork("bscmainnet")}>
+                        Switch Network
+                    </Button> */}
+                    {/* DEVELOPMENT */}
+                    {/* <Button className="font-w-hermann w-hermann-reg" variant="primary" onClick={() => switchNetwork("bsctestnet")}>
+                        Switch Network
+                    </Button> */}
+                </Modal.Footer>
+            </Modal>  
+            
             {/* End Modals */}
         </div>
   );
