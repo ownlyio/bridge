@@ -20,6 +20,7 @@ function App() {
         account: "",
         isApproved: false,
         hasMetamask: false,
+        currentBscOwnBalance: 1000000000,
         txError: "",
         txHashBsc: "",
         txHashEth: "",
@@ -60,7 +61,7 @@ function App() {
     // Util Functions
     // MAX function
     const triggerMaxAmount = () => {
-        // document.getElementById("stake-input-num").value = state.currentLPBalance
+        document.getElementById("bridge-amt").value = state.currentBscOwnBalance
     }
 
     // make an address short
@@ -208,8 +209,8 @@ function App() {
                                             </div>
 
                                             <div className="input-group">
-                                                <input type="text" className="form-control font-size-160" placeholder="0.000" />
-                                                <button type="button" className="btn btn-custom-4 px-3">Max</button>
+                                                <input type="number" id="bridge-amt" className="form-control font-size-160" placeholder="0.000" />
+                                                <button onClick={triggerMaxAmount} type="button" className="btn btn-custom-4 px-3">MAX</button>
                                             </div>
                                         </div>
                                     </div>
@@ -221,12 +222,17 @@ function App() {
                                         <button className="btn btn-border-2 py-2 w-100">Limits</button>
                                     </div>
                                     <div className="mb-1">
-                                        { state.isConnected ? (
-                                            <button className="btn btn-custom-2 font-size-130 py-3 w-100">APPROVE</button>
-                                        ) : (
+                                        { state.isConnected ? 
+                                            state.isApproved ? (
+                                                // Toggle buttons
+                                                <button onClick={() => _setState("isApproved", false)} className="btn btn-custom-2 font-size-130 py-3 w-100">TRANSFER</button>
+                                            ) : (
+                                                // Toggle buttons
+                                                <button onClick={() => _setState("isApproved", true)} className="btn btn-custom-2 font-size-130 py-3 w-100">APPROVE</button>
+                                            )
+                                        : (
                                             <button onClick={() => setShowNotConnected(true)} className="btn btn-custom-2 font-size-130 py-3 w-100">APPROVE</button>
                                         )}
-                                        {/* <button className="btn btn-custom-2 font-size-130 py-3 w-100">TRANSFER</button> */}
                                     </div>
                                 </div>
 
