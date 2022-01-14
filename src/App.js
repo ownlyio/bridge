@@ -4,6 +4,7 @@ import { configureWeb3 } from './utils/web3Init'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button, Modal } from 'react-bootstrap'
 import { faCheckCircle, faExclamationCircle, faExternalLinkAlt, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import networks from './utils/networks'
 // Images
 import img_bnb from './img/tokens/bnb.png'
 import img_eth from './img/tokens/eth.png'
@@ -18,6 +19,7 @@ function App() {
         isConnected: false,
         account: "",
         isApproved: false,
+        hasMetamask: false,
         txError: "",
         txHashBsc: "",
         txHashEth: "",
@@ -39,6 +41,21 @@ function App() {
     const [showOnTransfer, setShowOnTransfer] = useState(false)
     const [showMetamaskInstall, setShowMetamaskInstall] = useState(false)
     const [showWrongNetwork, setShowWrongNetwork] = useState(false)
+
+    useEffect(() => {
+        function _init() {
+            const web3Metamask = configureWeb3()
+
+            if (web3Metamask !== 1) { 
+                setWeb3(web3Metamask)
+                _setState("hasMetamask", true)
+            } else {
+                _setState("hasMetamask", false)
+            }
+        }
+
+        _init()
+    }, [])
 
     // Util Functions
     // MAX function
@@ -75,14 +92,38 @@ function App() {
         });
     }
 
-    // web3 functions
+    // app, web3 functions
+    // switch network      
+    const switchNetwork = async (networkName) => {
+        try {
+            await web3.currentProvider.request({
+                method: "wallet_switchEthereumChain",
+                // PRODUCTION
+                // params: [{ chainId: "0x38" }],
+                // DEVELOPMENT
+                params: [{ chainId: "0x61" }],
+            })
+
+            setShowWrongNetwork(false)
+        } catch (error) {
+            if (error.code === 4902) {
+                try {
+                    await web3.currentProvider.request({
+                        method: "wallet_addEthereumChain",
+                        params: [networks[networkName]],
+                    })
+                } catch (error) {
+                    _setState("txError", error.message)
+                    setShowOnError(true)
+                }
+            }
+        }
+    }
+
     // connect wallet
     const connectWallet = async () => {
-        const web3Metamask = configureWeb3()
-
-        if (web3Metamask != 1) {
-            setWeb3(web3Metamask)
-            const netId = await web3Metamask.eth.net.getId() // 97 - BSC testnet, 56 - BSC Mainnet
+        if (state.hasMetamask) {
+            const netId = await web3.eth.net.getId() // 97 - BSC testnet, 56 - BSC Mainnet
             
             // PRODUCTION
             // if (netId === 56) {
@@ -341,9 +382,9 @@ function App() {
                         Switch Network
                     </Button> */}
                     {/* DEVELOPMENT */}
-                    {/* <Button className="font-w-hermann w-hermann-reg" variant="primary" onClick={() => switchNetwork("bsctestnet")}>
+                    <Button className="font-w-hermann w-hermann-reg" variant="primary" onClick={() => switchNetwork("bsctestnet")}>
                         Switch Network
-                    </Button> */}
+                    </Button>
                 </Modal.Footer>
             </Modal>  
             
