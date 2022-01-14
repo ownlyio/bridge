@@ -8,6 +8,50 @@ import img_bnb from './img/tokens/bnb.png'
 import img_eth from './img/tokens/eth.png'
 import img_ownly_logo from './img/ownly/logo.png'
 
+// Variables
+const [state, setState] = useState({
+    isConnected: false,
+    account: "",
+    isApproved: false,
+    txError: "",
+    txHash: "",
+})
+
+// Util Functions
+// MAX function
+const triggerMaxAmount = () => {
+    // document.getElementById("stake-input-num").value = state.currentLPBalance
+}
+
+// make an address short
+const shortenAddress = (address, prefixCount, postfixCount) => {
+    let prefix = address.substr(0, prefixCount)
+    let postfix = address.substr(address.length - postfixCount, address.length)
+
+    return prefix + "..." + postfix
+}
+
+// state updater
+const _setState = (name, value) => {
+    setState(prevState => ({...prevState, [name]: value}))
+}
+
+// round to the nearest hundredths
+const roundOff = num => {
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+
+// add thousands separator
+const addCommasToNumber = x => {
+    if (!Number.isInteger(Number(x))) {
+        x = Number(x).toFixed(5)
+    }
+
+    return x.toString().replace(/^[+-]?\d+/, function(int) {
+        return int.replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+    });
+}
+
 function App() {
     return (
         <div className="bg-color-1">
@@ -88,7 +132,8 @@ function App() {
                                         <button className="btn btn-border-2 py-2 w-100">Limits</button>
                                     </div>
                                     <div className="mb-1">
-                                        <button className="btn btn-custom-2 font-size-130 py-3 w-100">TRANSFER</button>
+                                        <button className="btn btn-custom-2 font-size-130 py-3 w-100">APPROVE</button>
+                                        {/* <button className="btn btn-custom-2 font-size-130 py-3 w-100">TRANSFER</button> */}
                                     </div>
                                 </div>
 
