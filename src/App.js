@@ -11,10 +11,11 @@ import img_ownly_logo from './img/ownly/logo.png'
 function App() {
     return (
         <div className="bg-color-1">
+            {/* Navbar */}
             <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
                 <div className="container">
                     <div className="d-flex align-items-center" id="navbar-d-flex">
-                        <a className="#" href="https://ownly.io/marketplace">
+                        <a className="#" href="#">
                             <img src={img_ownly_logo} width="53" alt="Ownly" />
                         </a>
                         <div className="ps-2">
@@ -22,26 +23,35 @@ function App() {
                                 <div className="">
                                     <div className="d-flex align-items-center">
                                         <div className="font-size-150 font-size-sm-200 rubik-black website-home-link line-height-90">OWNLY</div>
+                                        <div className="bg-color-6 text-center text-white py-1 px-2 ms-2">
+                                            <div className="font-size-60 font-size-sm-70 rubik-bold line-height-100" id="app-version">BETA</div>
+                                        </div>
                                     </div>
+                                    <div className="font-size-70 font-size-sm-100 rubik-bold line-height-90" id="market-label">BRIDGE</div>
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div className="collapse navbar-collapse w-100 justify-content-end" id="navbarSupportedContent">
+                    <div className="justify-content-between mt-2 mt-lg-0" id="navbarSupportedContent" style={{"flexGrow": "initial"}}>
                         <ul className="navbar-nav mb-2 mb-lg-0">
-                            <li className="nav-item" id="connect-to-metamask-container">
-                                <button type="button" className="btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" onClick={ connectWallet }>Connect Wallet</button>
-                            </li>
+                            {/* { isConnected ? (
+                                <li className="nav-item" id="connect-to-metamask-container">
+                                    <button type="button" className="d-none d-sm-block btn btn-custom-9 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" style={{"borderRadius": "100px"}}>Connected: {shortenAddress(account, 6, 6)}</button>
+                                </li>
+                            ) : ( */}
+                                <li className="nav-item" id="connect-to-metamask-container">
+                                    <button type="button" className="d-none d-sm-block btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" style={{"borderRadius": "100px"}}>Connect&nbsp;Wallet</button>
+                                    <button type="button" className="d-block d-sm-none btn btn-custom-4 shadow-sm font-size-90 py-2 px-4" id="connect-to-metamask" style={{"borderRadius": "100px"}}>Connect</button>
+                                </li>
+                            {/* )} */}
                         </ul>
                     </div>
                 </div>
             </nav>
+            {/* End Navbar */}
 
+            {/* App */}
             <div className="container">
                 <div className="d-flex align-items-center min-vh-100 py-5 padding-after-nav">
                     <div className="card shadow-sm w-100 mb-5 mt-4 mt-sm-0">
@@ -110,6 +120,11 @@ function App() {
                     </div>
                 </div>
             </div>
+            {/* End App */}
+
+            {/* Modals */}
+
+            {/* End Modals */}
         </div>
   );
 }
