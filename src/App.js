@@ -1,12 +1,16 @@
 import './App.css';
 import { useEffect, useState } from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button, Modal } from 'react-bootstrap'
+import { faCheckCircle, faExclamationCircle, faExternalLinkAlt, faSpinner } from '@fortawesome/free-solid-svg-icons'
 // Utils
 import shortenAddress  from './utils/shortenAddress'
-
+// Images
 import img_bnb from './img/tokens/bnb.png'
 import img_eth from './img/tokens/eth.png'
 import img_ownly_logo from './img/ownly/logo.png'
+import metamask from './img/metamask.png'
+
 
 // Variables
 const [state, setState] = useState({
@@ -14,8 +18,25 @@ const [state, setState] = useState({
     account: "",
     isApproved: false,
     txError: "",
-    txHash: "",
+    txHashBsc: "",
+    txHashEth: "",
 })
+
+// Other Variables
+// PRODUCTION
+// const explorerBscUrl = "https://bscscan.com/tx/"
+// const explorerEthUrl = "https://etherscan.com/tx/"
+// DEVELOPMENT
+const explorerBscUrl = "https://testnet.bscscan.com/tx/"
+const explorerEthUrl = "https://rinkeby.etherscan.com/tx/"
+
+// Modals
+const [showNotConnected, setShowNotConnected] = useState(false)
+const [showPleaseWait, setShowPleaseWait] = useState(false)
+const [showOnApprove, setShowOnApprove] = useState(false)
+const [showOnError, setShowOnError] = useState(false)
+const [showOnTransfer, setShowOnTransfer] = useState(false)
+const [showMetamaskInstall, setShowMetamaskInstall] = useState(false)
 
 // Util Functions
 // MAX function
@@ -168,7 +189,110 @@ function App() {
             {/* End App */}
 
             {/* Modals */}
+            {/* Modal for not connected */}
+            <Modal show={showNotConnected} onHide={() => setShowNotConnected(false)} backdrop="static" keyboard={false} size="sm" centered>
+                <Modal.Body>
+                    <div className="text-center mb-3">
+                        <FontAwesomeIcon color="red" size="6x" icon={faExclamationCircle} />
+                    </div>
+                    <p className="app-error-modal-content text-center font-andes text-lg">Please connect to your Metamask Wallet.</p>
+                </Modal.Body>
+                <Modal.Footer className="justify-content-center">
+                    <Button className="font-w-hermann w-hermann-reg" variant="secondary" onClick={() => setShowNotConnected(false)}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal> 
 
+            {/* Modal for error transaction */}
+            <Modal show={showOnError} onHide={() => setShowOnError(false)} backdrop="static" keyboard={false} size="sm" centered>
+                <Modal.Body>
+                    <div className="text-center mb-3">
+                        <FontAwesomeIcon color="red" size="6x" icon={faExclamationCircle} />
+                    </div>
+                    <p className="app-error-modal-content text-center font-andes text-lg">Error: {state.txError}</p>
+                </Modal.Body>
+                <Modal.Footer className="justify-content-center">
+                    <Button className="font-w-hermann w-hermann-reg" variant="secondary" onClick={() => setShowOnError(false)}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal> 
+
+            {/* Modal for waiting */}
+            <Modal show={showPleaseWait} onHide={() => setShowPleaseWait(false)} backdrop="static" keyboard={false} size="sm" centered>
+                <Modal.Body>
+                    <div className="text-center mb-3">
+                        <FontAwesomeIcon color="grey" size="6x" icon={faSpinner} spin />
+                    </div>
+                    <p className="app-error-modal-content text-center font-andes text-lg">Please wait...</p>
+                </Modal.Body>
+                <Modal.Footer className="justify-content-center">
+                    <Button className="font-w-hermann w-hermann-reg" variant="secondary" onClick={() => setShowPleaseWait(false)}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal> 
+
+            {/* Modal for successful approve */}
+            <Modal show={showOnApprove} onHide={() => setShowOnApprove(false)} backdrop="static" keyboard={false} size="sm" centered>
+                <Modal.Body>
+                    <div className="text-center mb-3">
+                        <FontAwesomeIcon color="green" size="6x" icon={faCheckCircle} />
+                    </div>
+                    <p className="app-success-modal-content text-center font-andes text-lg">Your transaction was approved. You can now proceed.</p>
+                </Modal.Body>
+                <Modal.Footer className="justify-content-center">
+                    <Button className="font-w-hermann w-hermann-reg" variant="secondary" onClick={() => setShowOnApprove(false)}>
+                        Close
+                    </Button>
+                    <Button className="font-w-hermann w-hermann-reg" variant="primary" onClick={() => window.open(explorerBscUrl + state.txHashBsc, '_blank').focus()}>
+                        View on BscScan
+                    </Button>
+                    <Button className="font-w-hermann w-hermann-reg" variant="primary" onClick={() => window.open(explorerEthUrl + state.txHashEth, '_blank').focus()}>
+                        View on EtherScan
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+            {/* Modal for successful staking */}
+            <Modal show={showOnTransfer} onHide={() => setShowOnTransfer(false)} backdrop="static" keyboard={false} size="sm" centered>
+                <Modal.Body>
+                    <div className="text-center mb-3">
+                        <FontAwesomeIcon color="green" size="6x" icon={faCheckCircle} />
+                    </div>
+                    <p className="app-success-modal-content text-center font-andes text-lg">Your LP tokens are staked successfully.</p>
+                </Modal.Body>
+                <Modal.Footer className="justify-content-center">
+                    <Button className="font-w-hermann w-hermann-reg" variant="secondary" onClick={() => setShowOnTransfer(false)}>
+                        Close
+                    </Button>
+                    <Button className="font-w-hermann w-hermann-reg" variant="primary" onClick={() => window.open(explorerBscUrl + state.txHashBsc, '_blank').focus()}>
+                        View on BscScan
+                    </Button>
+                    <Button className="font-w-hermann w-hermann-reg" variant="primary" onClick={() => window.open(explorerEthUrl + state.txHashEth, '_blank').focus()}>
+                        View on EtherScan
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+            {/* Modal for No Metamask */}
+            <Modal show={showMetamaskInstall} onHide={() => setShowMetamaskInstall(false)} backdrop="static" keyboard={false} size="sm" centered>
+                <Modal.Body>
+                    <div style={{"textAlign": "center"}}>
+                        <img src={metamask} alt="Metamask logo" />
+                    </div>
+                    <p className="app-metamask-modal-content text-center font-andes text-lg">Metamask is currently not installed</p>
+                </Modal.Body>
+                <Modal.Footer className="justify-content-center">
+                    <Button className="font-w-hermann w-hermann-reg" variant="secondary" onClick={() => setShowMetamaskInstall(false)}>
+                        Close
+                    </Button>
+                    <Button className="font-w-hermann w-hermann-reg" variant="primary" onClick={() => window.open("https://metamask.io/download", '_blank').focus()}>
+                        Install Metamask
+                    </Button>
+                </Modal.Footer>
+            </Modal> 
             {/* End Modals */}
         </div>
   );
