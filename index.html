@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="Ownly: Buy, own, collect, and trade 1 of 1 edition crypto artworks by talented artists." />
+	<meta name="description" content="OWNLY is a governance, token-based NFT platform that enable creators and collectors optimize the authentic value of NFT assets. Ownly is created to be a meeting place of artworks and collectors in the crypto space.">
+	<meta name="author" content="Ownly">
+	
+	<meta property="og:url" content="https://ownly.io/marketplace" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Ownly: Buy, own, collect, and trade 1 of 1 edition crypto artworks by talented artists." />
+	<meta property="og:description" content="OWNLY is a governance, token-based NFT platform that enable creators and collectors optimize the authentic value of NFT assets. Ownly is created to be a meeting place of artworks and collectors in the crypto space." />
+	<meta property="og:image" content="https://ownly.market/img/og/1.png" />
+	
+	<title>Ownly Marketplace</title>
+	<link rel="icon" href="img/ownly/own-token.webp">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css">
+	<link rel="stylesheet" href="js/alertifyjs/css/alertify.min.css" />
+	<link rel="stylesheet" href="js/alertifyjs/css/themes/default.min.css" />
+	<link rel="stylesheet" href="js/fancybox/fancybox.css" />
+	<link rel="stylesheet" href="js/splide/splide.min.css" />
+	<link rel="stylesheet" href="css/style.css?v=30">
+	
+	<style>
+		.network.dropdown-toggle::after {
+			position: absolute;
+			top:26px;
+			right:22px;
+		}
+	</style>
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-6LBV47LFR4"></script>
+	<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6LBV47LFR4');
+	</script>
+</head>
+<body>
+	<div style="overflow-x:hidden">
+		<div class="d-flex justify-content-center align-items-center position-fixed vh-100 w-100 bg-white" id="loading-ownly-container" style="z-index:1031">
+			<div class="pb-5">
+				<img src="img/ownly/own-token.webp" id="loading-ownly" style="width:200px; transition:1s" alt="Ownly" />
+				<div class="progress mt-4">
+					<div class="progress-bar progress-bar-striped progress-bar-animated bg-color-2" id="loading-page-progress-bar" role="progressbar" style="width:0"></div>
+				</div>
+				<input type="hidden" id="progress_width" value="0">
+			</div>
+		</div>
+		
+		<div class="d-none" id="app">
+			<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
+				<div class="container">
+					<div class="d-flex align-items-center" style="min-height:63px">
+						<a class="#" href="https://ownly.io/marketplace">
+							<img src="img/ownly/own-token.webp" width="53" alt="Ownly">
+						</a>
+						<div class="ps-2">
+							<a href="#" class="link-color-1 text-decoration-none website-home-link">
+								<div class="">
+									<div class="d-flex align-items-center">
+										<div class="font-size-150 font-size-sm-200 rubik-black website-home-link line-height-90">OWNLY</div>
+										<div class="bg-color-6 text-center text-white py-1 px-2 ms-2">
+											<div class="font-size-60 font-size-sm-70 rubik-bold line-height-100" id="app-version"></div>
+										</div>
+									</div>
+									<div class="font-size-70 font-size-sm-100 rubik-bold line-height-90" id="market-label">MARKET</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse w-100 justify-content-end" id="navbarSupportedContent" style="flex-grow:initial">
+						<ul class="navbar-nav mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="text-color-6 text-decoration-none" href="#" id="account-address"></a>
+							</li>
+							
+							<li class="nav-item" id="connect-wallet-container">
+								<button type="button" class="btn btn-custom-9 shadow-sm font-size-90 py-2 px-4" id="connect-wallet" style="border-radius:100px">Connect&nbsp;Wallet</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			
+			<div id="page-content" style="min-height:calc(100vh - 201px); padding-top:80px">
+				<div class="container py-4">
+					<h1 class="rubik-bold text-color-1 mt-3">OWNLY BRIDGE</h1>
+					<h2 class="font-size-130 mb-4 pb-2">Bridge your OWN tokens from BNB Chain to Ethereum and vice versa.</h2>
+					
+					<hr>
+					
+					<div class="card bg-color-18 mt-5 mb-5" style="border-radius:0">
+						<div class="card-body p-5">
+							<div class="d-flex align-items-center">
+								<div class="w-50 mb-4">
+									<label class="neo-bold mb-2 ps-1">From</label>
+									<div class="btn-group w-100">
+										<button class="btn btn-secondary font-size-110 btn-lg dropdown-toggle px-4 py-3 bg-white text-start text-color-6 network" id="from-network" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border:2px solid #ced4da">BNB Chain</button>
+										<ul class="dropdown-menu w-100">
+											<li><button class="dropdown-item px-4 py-3 change-network" data-direction="from" data-value="BNB Chain">BNB Chain</button></li>
+											<li><button class="dropdown-item px-4 py-3 change-network" data-direction="from" data-value="Ethereum">Ethereum</button></li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="px-4 mx-2">
+									<i class="fas fa-arrow-right font-size-160"></i>
+								</div>
+								
+								<div class="w-50 mb-4">
+									<label class="neo-bold mb-2 ps-1">To</label>
+									<div class="btn-group w-100">
+										<button class="btn btn-secondary font-size-110 btn-lg dropdown-toggle px-4 py-3 bg-white text-start text-color-6 network" id="to-network" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border:2px solid #ced4da">Ethereum</button>
+										<ul class="dropdown-menu w-100">
+											<li><button class="dropdown-item px-4 py-3 change-network" data-direction="to" data-value="BNB Chain">BNB Chain</button></li>
+											<li><button class="dropdown-item px-4 py-3 change-network" data-direction="to" data-value="Ethereum">Ethereum</button></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							<div class="mb-4">
+								<label class="neo-bold mb-2 ps-1" for="amount">Amount</label>
+								<input type="number" class="form-control py-3 py-lg-3 px-4 font-size-110 mb-2" placeholder="Enter Amount" id="amount" style="border-width:2px" required />
+								<div class="d-flex pt-1">
+									<div class="pe-5 font-size-90 ps-1">Balance: <span id="balance">0</span></div>
+									<div class="font-size-90 ps-1">Approved: <span id="approved">0</span></div>
+								</div>
+							</div>
+							
+							<div class="row pt-2 mb-2 position-relative">
+								<div class="position-absolute w-100 px-3" style="top:20px; left:0">
+									<div class="bg-color-21 position-relative" style="height:4px; z-index:0">
+										<div class="h-100 bg-color-22" id="progress-bar" style="width:16%"></div>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="text-center position-relative mb-3" style="z-index:1">
+										<i class="fas fa-circle font-size-180 text-color-11 completed-circle" data-value="1"></i>
+									</div>
+									<div>
+										<button class="btn btn-custom-4 w-100 px-4 py-3" id="approve">1. Approve</button>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="text-center position-relative mb-3" style="z-index:1">
+										<i class="fas fa-circle font-size-180 text-color-11 completed-circle" data-value="2"></i>
+									</div>
+									<div>
+										<button class="btn btn-custom-4 w-100 px-4 py-3" id="transfer">2. Transfer</button>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="text-center position-relative mb-3" style="z-index:1">
+										<i class="fas fa-circle font-size-180 text-color-11 completed-circle" data-value="3"></i>
+									</div>
+									<div>
+										<button class="btn btn-custom-4 w-100 px-4 py-3" id="claim">3. Claim</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="w-100 bg-white border-top">
+				<div class="container py-4">
+					<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+						<div class="d-flex mb-4 mb-md-0 pb-2 pb-md-0 pe-5">
+							<div class="text-center pe-3 pe-md-5">
+								<img src="img/ownly/ownly-2.png" class="mb-3" width="120" alt="Ownly" />
+								<div class="text-color-1 font-size-90">Ownly &copy; 2021</div>
+							</div>
+							
+							<div class="d-flex flex-column justify-content-between ps-3 py-1" style="border-left:3px solid #000000">
+								<div class="d-flex text-color-1 mb-2">
+									<div class="text-center me-3" style="min-width:20px">
+										<i class="fas fa-map-marker-alt font-size-120"></i>
+									</div>
+									<div class="font-size-90">
+										<div>SILI DELI: DOST-BU TBI Office, Ground floor,</div>
+										<div>Student Union Bldg., Bicol University Main Campus,</div>
+										<div>Legazpi City, Albay, Philippines 4500</div>
+									</div>
+								</div>
+								
+								<div class="d-flex text-color-1 mb-2">
+									<div class="text-center me-3" style="min-width:20px">
+										<i class="fas fa-envelope font-size-120"></i>
+									</div>
+									<div class="font-size-90">support@ownly.io</div>
+								</div>
+								
+								<div class="d-flex text-color-1">
+									<div class="text-center me-3" style="min-width:20px">
+										<i class="fas fa-phone font-size-120"></i>
+									</div>
+									<div class="font-size-90">+63 977 143 1897</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="ps-xl-5 flex-fill">
+							<div class="mb-4">
+								<div class="text-color-6 font-size-90 pb-2 neo-bold">JOIN OUR VIP LIST FOR THE INSIDE SCOOP!</div>
+								
+								<form class="newsletter-form">
+									<div class="d-flex align-items-center mb-3">
+										<div class="d-flex flex-fill justify-content-center">
+											<input type="email" name="email_address" class="form-control d-block px-3 py-1 font-size-90" placeholder="Your email address" required />
+										</div>
+										
+										<div>
+											<button type="submit" class="btn btn-custom-1 px-3 py-1 font-size-90" style="letter-spacing:0.05em">Let&nbsp;me&nbsp;in!</button>
+										</div>
+									</div>
+								</form>
+							</div>
+							
+							<div class="text-color-1 font-size-110 mb-2">Connect with us:</div>
+							<div class="font-size-170 line-height-140">
+								<a href="https://twitter.com/ownlyio" class="text-decoration-none">
+									<i class="fab fa-twitter text-color-4 me-2"></i>
+								</a>
+								<a href="https://t.me/ownlyio" class="text-decoration-none">
+									<i class="fab fa-telegram text-color-4 me-2"></i>
+								</a>
+								<a href="https://discord.gg/qAyCCMrjww" class="text-decoration-none">
+									<i class="fab fa-discord text-color-4 me-2"></i>
+								</a>
+								<a href="https://github.com/ownlyio" class="text-decoration-none">
+									<i class="fab fa-github text-color-4 me-2"></i>
+								</a>
+								<a href="https://www.linkedin.com/company/ownlyio/" class="text-decoration-none">
+									<i class="fab fa-linkedin-in text-color-4 me-2"></i>
+								</a>
+								<a href="https://web.facebook.com/ownly.io" class="text-decoration-none">
+									<i class="fab fa-facebook text-color-4 me-2"></i>
+								</a>
+								<a href="https://www.reddit.com/r/Ownly/" class="text-decoration-none">
+									<i class="fab fa-reddit text-color-4 me-2"></i>
+								</a>
+								<a href="https://www.instagram.com/ownly.io/" class="text-decoration-none">
+									<i class="fab fa-instagram text-color-4"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="modal-no-metamask-installed" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered modal-sm">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="text-center mt-3 mb-3">
+								<img src="img/logo/metamask.webp" width="120" />
+							</div>
+							<h5 class="w-100 font-size-100 text-center">Metamask is currently not installed</h5>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+							<a href="https://metamask.io/download.html" target="_blank" class="btn btn-custom-2" id="install-metamask">Install Metamask</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="modal-subscribe-success" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered modal-sm">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="text-center mt-3 mb-3">
+								<i class="fas fa-check-circle font-size-400 text-color-3"></i>
+							</div>
+							<h5 class="w-100 font-size-100 text-center">Thank you for subscribing!</h5>
+						</div>
+						<div class="modal-footer justify-content-center">
+							<button type="button" class="btn btn-custom-2 px-4" data-bs-dismiss="modal">Okay</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="modal-wrong-network" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered modal-sm">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="text-center mt-3 mb-3">
+								<i class="fas fa-exclamation-circle font-size-400 text-color-3"></i>
+							</div>
+							<h5 class="w-100 font-size-100 text-center">You are currently on the wrong network!</h5>
+						</div>
+						<div class="modal-footer justify-content-center">
+							<button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Okay</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="modal-success" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered modal-sm">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="text-center mt-3 mb-3">
+								<i class="fas fa-check-circle font-size-400 text-color-3"></i>
+							</div>
+							<h5 class="w-100 font-size-100 text-center message"></h5>
+						</div>
+						<div class="modal-footer justify-content-center">
+							<button type="button" class="btn btn-custom-2 px-4" data-bs-dismiss="modal">Okay</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="modal-error" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered modal-sm">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="text-center mt-3 mb-3">
+								<i class="fas fa-exclamation-circle font-size-400 text-color-1"></i>
+							</div>
+							<h5 class="w-100 font-size-100 text-center message"></h5>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-custom-1 px-4" data-bs-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="modal-processing" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+				<div class="modal-dialog modal-dialog-centered modal-sm">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="py-5 text-center">
+								<div class="spinner-grow background-image-cover bg-transparent mb-4" style="width:6rem; height:6rem; background-image:url('img/ownly/own-token.png')" role="status">
+									<span class="visually-hidden">Loading...</span>
+								</div>
+								<h5 class="w-100 font-size-120 text-center message mb-0">Processing</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="modal-wrong-network-2" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered modal-sm">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="text-center mt-3 mb-3">
+								<i class="fas fa-exclamation-circle font-size-400 text-color-3"></i>
+							</div>
+							<h5 class="w-100 font-size-100 text-center message"></h5>
+						</div>
+						<div class="modal-footer justify-content-center">
+							<button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Okay</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="modal-wallet-options" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title font-size-110">Select wallet:</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						
+						<div class="modal-body py-4">
+							<div class="row justify-content-center px-2">
+								<div class="col-md-6 px-2 mb-3">
+									<div class="card wallet-options" data-wallet="MetaMask">
+										<div class="card-body">
+											<div class="text-center mb-2">
+												<img src="img/logo/metamask.webp" width="90" alt="Metamask" />
+											</div>
+											<div class="text-center text-color-7 font-size-90">Connect to your MetaMask Wallet</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-6 px-2 mb-3">
+									<div class="card wallet-options" data-wallet="MetaMask">
+										<div class="card-body">
+											<div class="text-center mb-2">
+												<img src="img/logo/trust.png" width="81" alt="Trust Wallet" />
+											</div>
+											<div class="text-center text-color-7 font-size-90">Connect to your Trust Wallet</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-6 px-2 mb-3">
+									<div class="card wallet-options" data-wallet="WalletConnect">
+										<div class="card-body">
+											<div class="text-center mb-2">
+												<img src="img/logo/walletconnect.webp" width="90" alt="Wallet Connect" />
+											</div>
+											<div class="text-center text-color-7 font-size-90">Scan with WalletConnect to connect</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.1/dist/umd/index.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+	<script src="js/ellipsis.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js" async integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/" crossorigin="anonymous"></script>
+	<script src="js/MultiClamp.min.js"></script>
+	<script src="js/script.js?v=1.0.0" id="script"></script>
+</body>
+</html>

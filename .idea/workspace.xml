@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a8ab5b23-0b8e-47a1-85fc-ca3adf57c564" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/._Alegreya-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/._Alegreya-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/._Alegreya-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/._Alegreya-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/._Alegreya-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/._Alegreya-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/Alegreya-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/Alegreya-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/Alegreya-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/Alegreya-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/Alegreya-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Alegreya/Alegreya-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Helvetica/HelveticaLTStd-Light_0.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Helvetica/HelveticaLTStd-Roman_0.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEss-Black.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEss-BlackIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEss-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEss-BoldIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEss-Light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEss-LightIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEss-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEss-RegularIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEss-UltLight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEss-UltLightIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/._NeogroteskEssAlt-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEss-Black.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEss-BlackIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEss-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEss-BoldIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEss-Light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEss-LightIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEss-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEss-RegularIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEss-UltLight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEss-UltLightIt.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Neo/NeogroteskEssAlt-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/._Rubik-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/._Rubik-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/._Rubik-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/._Rubik-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/._Rubik-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/._Rubik-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/._Rubik-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/._Rubik-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/._Rubik-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/._Rubik-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/Rubik-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/Rubik-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/Rubik-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/Rubik-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/Rubik-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/Rubik-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/Rubik-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/Rubik-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/Rubik-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Rubix/Rubik-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/10.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/11.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/12.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/13.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/14.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/15.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/16.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/17.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/18.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/19.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/5.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/6.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/7.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/8.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/articles/9.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Chen-Naje.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Chen-Naje.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Dan-Barotilla.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Dan-Barotilla.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Eugene-Oligo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Eugene-Oligo.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Lei-Melendres.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Lei-Melendres.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Marso.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Marso.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Mustache-Boii.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/Mustache-Boii.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/dan-2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/glenn-2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/artists/mel-2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/banners/Amazing-NFT Artists.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/banners/Globally-Competitive.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/banners/NFT-Pioneer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/banners/Ownly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/banners/Pool-Of-Creative-Talents.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bg/Marketplace_Banner2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bg/Marketplace_Banner2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bg/Mustachios_GridBanner02.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bg/cryptosolitaire.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bg/inkvadyrz-2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bg/inkvadyrz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bg/mustachios-bg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bg/rewards.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bg/the-sages-rant-collectibles.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bg/titans-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bnb/bnb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bnb/bnb.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/busd/busd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/busd/busd.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/32x32/cryptosolitaire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/32x32/genesis-block.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/32x32/inkvadyrz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/32x32/mustachios.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/32x32/rewards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/32x32/the-sages-rant-collectibles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/32x32/titans-of-industry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/5.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/6.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/7.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/8.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/collection-logos.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/cryptosolitaire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/genesis-block.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/inkvadyrz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/mustachios.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/rewards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/the-sages-rant-collectibles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/collection-logos/titans-of-industry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/genesis-block/bg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/logo/metamask.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/logo/trust.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/logo/walletconnect.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mustachios/mustachios-text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/mustachios/mustachios-text.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/og-image-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/og/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/oha/bg-2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/oha/bg-3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/oha/bg-4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/oha/bg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/oha/ownly-x-ayala.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/oha/ownly-x-ayala.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/ownly/horizontal-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/ownly/own-token.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/ownly/own-token.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/ownly/ownly-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/ownly/ownly.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/the-sages-rant-collectibles/text.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/thumbnails/token.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/tokens/BNB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/tokens/ETH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/tokens/OWN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/MultiClamp.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/blockies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/ellipsis.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/web3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/web3.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/web3modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/64x64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/CNAME" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/._Alegreya-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/._Alegreya-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/._Alegreya-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/._Alegreya-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/._Alegreya-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/._Alegreya-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/Alegreya-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/Alegreya-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/Alegreya-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/Alegreya-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/Alegreya-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Alegreya/Alegreya-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEss-Black.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEss-BlackIt.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEss-Bold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEss-BoldIt.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEss-Light.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEss-LightIt.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEss-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEss-RegularIt.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEss-UltLight.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEss-UltLightIt.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/._NeogroteskEssAlt-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEss-Black.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEss-BlackIt.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEss-Bold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEss-BoldIt.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEss-Light.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEss-LightIt.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEss-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEss-RegularIt.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEss-UltLight.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEss-UltLightIt.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Neo/NeogroteskEssAlt-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/._Rubik-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/._Rubik-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/._Rubik-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/._Rubik-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/._Rubik-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/._Rubik-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/._Rubik-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/._Rubik-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/._Rubik-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/._Rubik-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/Rubik-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/Rubik-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/Rubik-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/Rubik-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/Rubik-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/Rubik-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/Rubik-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/Rubik-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/Rubik-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/Rubix/Rubik-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/ownly/horizontal-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/ownly/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/tokens/bnb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/tokens/eth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/contract.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/getCurrentNetwork.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/getCurrentWalletConnected.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/shortenAddress.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/web3.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="27boDj1gg1UoWwC9sCI9SAY3W12" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8ab5b23-0b8e-47a1-85fc-ca3adf57c564" name="Default Changelist" comment="" />
+      <created>1649598030065</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649598030065</updated>
+      <workItem from="1649598031195" duration="20742000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
