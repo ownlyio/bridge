@@ -13,15 +13,11 @@
 	<meta property="og:description" content="OWNLY is a governance, token-based NFT platform that enable creators and collectors optimize the authentic value of NFT assets. Ownly is created to be a meeting place of artworks and collectors in the crypto space." />
 	<meta property="og:image" content="https://ownly.market/img/og/1.png" />
 	
-	<title>Ownly Marketplace</title>
+	<title>Ownly Bridge</title>
 	<link rel="icon" href="img/ownly/own-token.webp">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css">
-	<link rel="stylesheet" href="js/alertifyjs/css/alertify.min.css" />
-	<link rel="stylesheet" href="js/alertifyjs/css/themes/default.min.css" />
-	<link rel="stylesheet" href="js/fancybox/fancybox.css" />
-	<link rel="stylesheet" href="js/splide/splide.min.css" />
-	<link rel="stylesheet" href="css/style.css?v=30">
+	<link rel="stylesheet" href="css/style.css?v=32">
 	
 	<style>
 		.network.dropdown-toggle::after {
@@ -68,7 +64,7 @@
 											<div class="font-size-60 font-size-sm-70 rubik-bold line-height-100" id="app-version"></div>
 										</div>
 									</div>
-									<div class="font-size-70 font-size-sm-100 rubik-bold line-height-90" id="market-label">MARKET</div>
+									<div class="font-size-70 font-size-sm-100 rubik-bold line-height-90" id="market-label">BRIDGE</div>
 								</div>
 							</a>
 						</div>
@@ -93,8 +89,16 @@
 			
 			<div id="page-content" style="min-height:calc(100vh - 201px); padding-top:80px">
 				<div class="container py-4">
-					<h1 class="rubik-bold text-color-1 mt-3">OWNLY BRIDGE</h1>
-					<h2 class="font-size-130 mb-4 pb-2">Bridge your OWN tokens from BNB Chain to Ethereum and vice versa.</h2>
+					<div class="d-flex justify-content-between align-items-center mb-4 pb-2">
+						<div>
+							<h1 class="rubik-bold text-color-1 mt-3">OWNLY BRIDGE</h1>
+							<h2 class="font-size-130 mb-0">Bridge your OWN tokens from BNB Chain to Ethereum and vice versa.</h2>
+						</div>
+						
+						<div class="">
+							<button class="btn btn-custom-4 px-5 py-2" id="claim-own">Get OWN Tokens<div class="font-size-80 pb-1">(Testing)</div></button>
+						</div>
+					</div>
 					
 					<hr>
 					
@@ -102,7 +106,19 @@
 						<div class="card-body p-5">
 							<div class="d-flex align-items-center">
 								<div class="w-50 mb-4">
-									<label class="neo-bold mb-2 ps-1">From</label>
+									<div class="d-flex align-items-center justify-content-between mb-2">
+										<div class="">
+											<label class="neo-bold ps-1">From</label>
+										</div>
+										<div class="d-flex align-items-center pe-1 font-size-80">
+											<div>
+												Balance: <span id="from-balance">0</span>
+											</div>
+											<div class="ps-3">
+												<img src="img/logo/metamask.webp" class="cursor-pointer add-to-metamask" data-direction="from" width="25" />
+											</div>
+										</div>
+									</div>
 									<div class="btn-group w-100">
 										<button class="btn btn-secondary font-size-110 btn-lg dropdown-toggle px-4 py-3 bg-white text-start text-color-6 network" id="from-network" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border:2px solid #ced4da">BNB Chain</button>
 										<ul class="dropdown-menu w-100">
@@ -117,7 +133,19 @@
 								</div>
 								
 								<div class="w-50 mb-4">
-									<label class="neo-bold mb-2 ps-1">To</label>
+									<div class="d-flex align-items-center justify-content-between mb-2">
+										<div class="">
+											<label class="neo-bold ps-1">To</label>
+										</div>
+										<div class="d-flex align-items-center pe-1 font-size-80">
+											<div>
+												Balance: <span id="to-balance">0</span>
+											</div>
+											<div class="ps-3">
+												<img src="img/logo/metamask.webp" class="cursor-pointer add-to-metamask" data-direction="to" width="25" />
+											</div>
+										</div>
+									</div>
 									<div class="btn-group w-100">
 										<button class="btn btn-secondary font-size-110 btn-lg dropdown-toggle px-4 py-3 bg-white text-start text-color-6 network" id="to-network" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border:2px solid #ced4da">Ethereum</button>
 										<ul class="dropdown-menu w-100">
@@ -129,12 +157,13 @@
 							</div>
 							
 							<div class="mb-4">
-								<label class="neo-bold mb-2 ps-1" for="amount">Amount</label>
-								<input type="number" class="form-control py-3 py-lg-3 px-4 font-size-110 mb-2" placeholder="Enter Amount" id="amount" style="border-width:2px" required />
-								<div class="d-flex pt-1">
-									<div class="pe-5 font-size-90 ps-1">Balance: <span id="balance">0</span></div>
-									<div class="font-size-90 ps-1">Approved: <span id="approved">0</span></div>
+								<div class="d-flex align-items-center justify-content-between mb-2">
+									<div class="">
+										<label class="neo-bold ps-1">Amount</label>
+									</div>
+									<div class="pe-1 font-size-80">Approved: <span id="approved">0</span></div>
 								</div>
+								<input type="number" class="form-control py-3 py-lg-3 px-4 font-size-110 mb-2" placeholder="Enter Amount" id="amount" style="border-width:2px" required />
 							</div>
 							
 							<div class="row pt-2 mb-2 position-relative">
@@ -431,6 +460,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js" async integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/" crossorigin="anonymous"></script>
 	<script src="js/MultiClamp.min.js"></script>
-	<script src="js/script.js?v=1.0.0" id="script"></script>
+	<script src="js/script.js?v=1.0.1" id="script"></script>
 </body>
 </html>

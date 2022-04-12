@@ -531,7 +531,7 @@ html {
     width:80%;
 }
 #market-label {
-    letter-spacing:0.63em;
+    letter-spacing:0.7em;
 }
 .list-token-image-container {
     min-width:90px;
@@ -561,7 +561,7 @@ html {
         width:70%;
     }
     #market-label {
-        letter-spacing:0.54em;
+        letter-spacing:0.62em;
     }
     .list-token-image-container {
         min-width:110px;
